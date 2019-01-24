@@ -7,7 +7,17 @@ class CommponentLoop extends Component {
     super();
     this.state = {
       a: 1,
-      b: 2
+      b: 2,
+      arr: [
+        {name: 'a', id: 1},
+        {name: 'b', id: 2},
+        {name: 'c', id: 3},
+        {name: 'd', id: 4},
+        {name: 'e', id: 5},
+        {name: 'f', id: 6},
+        {name: 'h', id: 7},
+        {name: 'i', id: 8}
+      ]
     }
   }
   componentWillMount() {
@@ -24,6 +34,11 @@ class CommponentLoop extends Component {
       <div className="CommponentLoop">
         1234---{this.state.a}---{this.state.b}---{this.props.aa}
         <div ref="theDiv">theDiv</div>
+        <div>
+          {this.state.arr.map((val, index) => {
+            return <div key={index + new Date().getTime()} >{val.name}</div>
+          })}
+        </div>
       </div>
     )
   }
