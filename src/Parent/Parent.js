@@ -5,16 +5,17 @@ import Child1 from '../Child1/Child1'
 class Parent extends Component {
   constructor() {
     super();
-    this.state = { comm: {} }
+    this.state = { comm: '1' }
   }
   changeComm(comm) {
-    console.log(comm, 11);
+    this.setState({comm: comm})
   }
   render() {
     return (
       <div className="parent">
         parent
         <Child1 onClick={this.changeComm.bind(this)}/>
+        {JSON.stringify(this.state.comm)}
       </div>
     )
   }
