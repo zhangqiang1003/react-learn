@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './CommponentLoop.css'
+import { findDOMNode } from 'react-dom';
 
 class CommponentLoop extends Component {
   constructor() {
@@ -14,10 +15,16 @@ class CommponentLoop extends Component {
   }
   componentDidMount() {
     this.setState({a: 3, b: 66})
+    const el = findDOMNode(this);
+    console.log(el);
+    console.log(this.refs.theDiv);
   }
   render() {
     return (
-      <div className="CommponentLoop">1234---{this.state.a}---{this.state.b}---{this.props.aa}</div>
+      <div className="CommponentLoop">
+        1234---{this.state.a}---{this.state.b}---{this.props.aa}
+        <div ref="theDiv">theDiv</div>
+      </div>
     )
   }
   componentWillReceiveProps() {
