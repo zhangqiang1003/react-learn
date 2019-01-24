@@ -7,26 +7,10 @@ class App extends React.Component {
     return (
       <div>
         <h1>hello word!!</h1>
-        <HelloWorld />
+        <HelloWorld comm="1234"/>
       </div>
     )
   }
 }
-
-// class Board extends React.Component {
-//   renderSquare(i) {
-//     return <Square value={i} />
-//   }
-// }
-
-// class Square extends React.Component {
-//   render() {
-//     return (
-//       <button className="square">
-//         {this.props.value}
-//       </button>
-//     )
-//   }
-// }
 
 export default App;
