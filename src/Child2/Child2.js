@@ -11,7 +11,7 @@ class Child2 extends Component {
   }
   render() {
     return (
-      <div className="child2">child2</div>
+      <div className="child2">child2{JSON.stringify(this.props.child1Info)}</div>
     )
   }
 }
