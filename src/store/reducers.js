@@ -5,29 +5,32 @@ import {
   SET_VISIBILITY_FILTER,
   VisibilityFilters
 } from './actions'
-const { SHOW_ALL } = VisibilityFilters
+const { SHOW_ACTIVE } = VisibilityFilters
 
-function visibilityFilter(state = SHOW_ALL, action) {
+function visibilityFilter(state = SHOW_ACTIVE, action) {
   switch (action.type) {
     case SET_VISIBILITY_FILTER:
-      return action.filter
+      state = action.filter
+      return state
     default:
       return state
   }
 }
 
-function todos(state = [], action) {
+function todos(state = [], action) { // 这里return 一个新的state
   switch (action.type) {
     case ADD_TODO:
-      return [
+      state = [
         ...state,
         {
           text: action.text,
           completed: false
         }
       ]
+      console.log(state);
+      return state
     case TOGGLE_TODO:
-      return state.map((todo, index) => {
+      state = state.map((todo, index) => { // 这里return 一个新的state
         if (index === action.index) {
           return Object.assign({}, todo, {
             completed: !todo.completed
@@ -35,6 +38,7 @@ function todos(state = [], action) {
         }
         return todo
       })
+      return state;
     default:
       return state
   }

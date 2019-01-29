@@ -16,18 +16,3 @@ ReactDOM.render(
 <AppTest />
 </Provider>, document.getElementById('root'));
 registerServiceWorker();
-
-
-// import React from 'react'
-// import ReactDOM from 'react-dom'
-
-
-
-
-
-// ReactDOM.render(
-//   <Provider store={store}>
-//     <AppTest />
-//   </Provider>,
-//   document.getElementById('root')
-// )
